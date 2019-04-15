@@ -8,7 +8,7 @@ services:
 build-master:
   stage: build
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
+    - docker build --pull --tag master .
   only:
     - master
 
