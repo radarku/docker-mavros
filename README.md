@@ -1,6 +1,8 @@
 Docker Container for MAVROS
 ===========================
 
+![MAVROS Logo](mavros-logo.png)
+
 The purpose of this is to run [MAVROS](http://wiki.ros.org/mavros) from within Docker
 
 DockerHub
