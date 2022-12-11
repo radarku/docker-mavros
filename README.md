@@ -73,3 +73,19 @@ The [MAVROS page](https://github.com/mavlink/mavros/blob/master/mavros/README.md
  *  TCP client: `tcp://[server_host][:port][/?ids=sysid,compid]`
  *  TCP server: `tcp-l://[bind_host][:port][/?ids=sysid,compid]`
 
+There is a `STARTDELAY` environment variable built into the entry point of the container.
+This will cause the container to sleep before starting.  This is useful for waiting for other 
+microservices to start (gazebo, sitl) in docker-compose or kubernetes when health checks are not an option.
+By default this is 5 seconds.  You can modify it as follows:
+
+No delay:
+
+```
+docker run -it --rm --env FCUURL="tcp://192.168.1.113:5760"  --env STARTDELAY=0 mavros
+```
+
+60 seconds delay:
+
+```
+docker run -it --rm --env FCUURL="tcp://192.168.1.113:5760"  --env STARTDELAY=60 mavros
+```
