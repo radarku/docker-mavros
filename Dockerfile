@@ -4,6 +4,9 @@ LABEL maintainer Kyle Usbeck
 # Trick to get apt-get to not prompt for timezone in tzdata
 ENV DEBIAN_FRONTEND=noninteractive
 
+ARG STARTDELAY=5
+ENV STARTDELAY=$STARTDELAY
+
 # Install MAVROS and some other dependencies for later
 RUN apt-get update && apt-get install -y ros-kinetic-mavros ros-kinetic-mavros-extras ros-kinetic-mavros-msgs vim wget screen
 
